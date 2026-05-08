@@ -19,3 +19,8 @@ As I iterate on this project, I am actively mapping these computer science conce
 * **Control Flow:** Building resilient `while True:` loops and logic gates that handle unexpected user input cleanly.
 * **Data Structures:** Moving from flat lists to complex nested dictionaries.
 * **Code Sanitization:** Adhering strictly to PEP 8 indentation and syntax standards.
+* 
+## 🗺️ Roadmap (Future Iterations)
+* **Phase 2:** Implement a "Reverse Scrambler" feature using advanced string manipulation (list slicing and dictionary mapping) to automatically generate setup moves for practice.
+* **Phase 3:** Abstracting the code into Object-Oriented Programming (OOP) classes for better modularity.
+* **Phase 4:** Expanding the UI/UX for smoother command-line interaction.
