@@ -1,26 +1,55 @@
-# Rubik's Algorithm Assistant 🧊
+🧊 Rubik's Algorithm Assistant
+A command‑line Python tool for managing, searching, and persistently storing OLL/PLL algorithms using a structured JSON backend.
 
-A command-line Python application designed to manage, search, and persistently store Rubik's Cube OLL and PLL algorithms using a nested JSON architecture. 
+🎯 Purpose: A Living Engineering Log
+This repository is more than a utility — it’s a living learning log. I’m using this project as a “Shadow Curriculum” to document my growth in Python, software architecture, and systems thinking.
 
-## 🎯 The Core Mission: A Living Learning Log
-This repository is more than just a functional tool; it is a **living engineering log**. I am using this project as a "Shadow Curriculum" to actively document my progression in Python and software architecture. 
+Instead of pretending the first version is perfect, I’m intentionally building in public. Each iteration captures:
 
-Rather than building a perfect program on day one, I am deploying iterative versions. Future commits will document not just new features, but the bugs I break, the technical debt I clean up, and the engineering concepts I master along the way.
+the bugs I break
 
-## 🚀 Version 1.0 Features
-* **Persistent Data Storage:** Separates the Python logic (the engine) from the JSON data (the fuel), ensuring algorithms are saved locally and permanently.
-* **Nested Dictionary Architecture:** Upgraded from a flat data list to categorized "drawers" for independent OLL and PLL querying.
-* **The "Solve Workflow":** A dual-prompt logic gate that allows the user to input an OLL case and immediately transitions to a PLL prompt to simulate an actual practice solve.
-* **Automated Error Handling:** Includes `try/except` safety nets to automatically reconstruct the necessary JSON file structure if it is ever deleted or corrupted.
+the technical debt I clean
 
-## 🧠 What I'm Learning (The Curriculum)
-As I iterate on this project, I am actively mapping these computer science concepts:
-* **Decoupling:** Keeping data layers (`algs.json`) strictly separated from execution layers (`.py`).
-* **Control Flow:** Building resilient `while True:` loops and logic gates that handle unexpected user input cleanly.
-* **Data Structures:** Moving from flat lists to complex nested dictionaries.
-* **Code Sanitization:** Adhering strictly to PEP 8 indentation and syntax standards.
-* 
-## 🗺️ Roadmap (Future Iterations)
-* **Phase 2:** Implement a "Reverse Scrambler" feature using advanced string manipulation (list slicing and dictionary mapping) to automatically generate setup moves for practice.
-* **Phase 3:** Abstracting the code into Object-Oriented Programming (OOP) classes for better modularity.
-* **Phase 4:** Expanding the UI/UX for smoother command-line interaction.
+the concepts I learn
+
+the architecture I refine
+
+This project is both a tool and a record of my engineering progression.
+
+🚀 Current Build — Version 0.1: Beta Architecture
+This version replaces an earlier hot‑fixed prototype. V0.1 is a ground‑up rebuild focused on clarity, structure, and maintainability.
+
+Key Features
+Dynamic Data Routing  
+The add function automatically routes user input into the correct nested dictionary (OLL or PLL) based on intent.
+
+Persistent JSON Storage  
+Logic and data are fully separated. Algorithms are saved locally and persist across sessions.
+
+Solve Workflow Simulation  
+A dual‑prompt flow: enter an OLL case → track move count → transition directly into a PLL prompt to mimic real solve practice.
+
+Self‑Healing Error Handling  
+try/except logic reconstructs missing or corrupted JSON structures automatically.
+
+🧠 What I’m Learning (The Curriculum)
+As of V0.1, I’ve applied and practiced:
+
+Debugging Logic Errors  
+Understanding indentation, loop flow, and order‑of‑operations inside while loops.
+
+Variable Scope & Alignment  
+Eliminating NameError issues by ensuring consistent variable naming across logic branches.
+
+Data Structure Design  
+Transitioning from flat lists to nested dictionaries and learning how to access and manipulate them cleanly.
+
+🗺️ Roadmap to V1.0
+Phase 2 — Reverse Scrambler
+Generate setup moves automatically using string manipulation and algorithm inversion.
+
+Phase 3 — OOP Refactor
+Abstract the entire system into classes for cleaner architecture and scalability.
+
+Phase 4 — Version 1.0 Release
+A polished, stable, fully‑featured CLI with robust error handling and clean documentation.
