@@ -1,0 +1,116 @@
+🧊 Rubik’s Algorithm Assistant — Version 0.3
+Codename: The OOP Foundation
+
+🎯 Overview
+Version 0.3 introduces the first major architectural shift in the Rubik’s Algorithm Assistant.
+This release transitions the system from a procedural script into a class‑based, object‑oriented architecture, establishing a scalable foundation for future features such as advanced scramblers, case tagging, and multi‑step solve simulations.
+
+The goal of this version is structural clarity, modularity, and long‑term maintainability.
+
+🧩 Key Changes in V0.3
+1. Introduction of the AlgorithmLibrary Class
+Core functionality has been encapsulated into a dedicated class responsible for:
+
+loading and saving the JSON algorithm library
+
+counting moves
+
+generating inverse scrambles
+
+maintaining internal state (self.data)
+
+managing the library filename
+
+This marks the beginning of a modular engine‑block architecture.
+
+2. Separation of Data and Behavior
+The new class structure cleanly separates:
+
+data storage (algs.json)
+
+library operations (add, load, save)
+
+algorithm transformations (move counting, inversion)
+
+This improves readability, reduces global state, and prepares the system for multi‑class expansion.
+
+3. Encapsulated Scramble Generation
+The Reverse Scrambler logic from V0.2 has been migrated into a method:
+
+Code
+generate_scramble()
+This method:
+
+removes parentheses
+
+splits the algorithm into moves
+
+reverses the sequence
+
+flips primes and non‑primes
+
+preserves double moves
+
+returns a clean, invertible string
+
+The scrambler is now a reusable engine component rather than a procedural block.
+
+4. Improved Maintainability and Scalability
+The new architecture enables:
+
+easier testing
+
+cleaner future feature additions
+
+reduced duplication
+
+clearer control flow
+
+the ability to expand into multiple classes (e.g., Scrambler, CaseManager, SolveEngine)
+
+This version lays the groundwork for the next major evolution of the project.
+
+🧠 Development Notes
+Version 0.3 focuses on architectural improvement rather than new user‑facing features.
+Key concepts applied include:
+
+object‑oriented design
+
+method encapsulation
+
+state management
+
+modular engine construction
+
+separation of concerns
+
+This release establishes the structural backbone for future development.
+
+🗺️ Roadmap
+V0.4 — Full OOP Integration
+Planned expansions include:
+
+class‑based solve workflow
+
+dedicated scrambler class
+
+improved command routing
+
+cleaner user interface logic
+
+expanded algorithm validation
+
+V0.5 — Feature Enhancements
+Potential additions:
+
+case tagging
+
+algorithm categories
+
+JSON schema validation
+
+export/import tools
+
+✔️ Summary
+Version 0.3 marks the transition from a procedural tool to a structured, object‑oriented system.
+This release establishes the foundation for a scalable, modular Rubik’s Cube practice engine capable of supporting advanced features in future versions.
