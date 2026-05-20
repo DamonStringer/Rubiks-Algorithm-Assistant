@@ -53,3 +53,32 @@ Abstract the entire system into classes for cleaner architecture and scalability
 
 Phase 4 — Version 1.0 Release
 A polished, stable, fully‑featured CLI with robust error handling and clean documentation.
+
+## 📜 Version History & Changelog
+
+### 🚀 [v0.3 - The OOP Foundation](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/versions/v0.3/CA_V0.3_readme.txt)
+*Architectural shift from procedural scripting to scalable, object-oriented design.*
+
+* **OOP Refactor:** Encapsulated library management, move-counting, and file I/O into the new `AlgorithmLibrary` class.
+* **Separation of Concerns:** Isolated data storage states from operational logic to reduce global state bugs.
+* **Method Encapsulation:** Integrated the reverse scrambler into a reusable class method (`generate_scramble()`).
+* **Curriculum Focus:** Learned state management, class architecture, and modular engine design.
+
+---
+
+### 🧩 [v0.2 - Reverse Scrambler Engine](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/versions/v0.2/v0.2README.MD)
+*Introduced the project's first computational subsystem to generate setup moves.*
+
+* **Reverse Scrambler:** Added logic to clean algorithm strings, split move sequences, and invert faces/primes (preserving double moves) for targeted practice.
+* **New Command:** Implemented the `scramble` gate into the main workflow loop.
+* **Curriculum Focus:** Mastered advanced string manipulation (`.replace()`, `.split()`), list inversion, and translating physical cube logic into programmatic conditionals.
+
+---
+
+### 📦 [v0.1 - Beta Architecture](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/README.md)
+*The ground-up rebuild focusing on structural clarity and persistent storage.*
+
+* **Dynamic Data Routing:** Automatically sorts input into nested OLL/PLL JSON dictionaries.
+* **Solve Workflow:** Created a dual-prompt flow mimicking real-world OLL-to-PLL transitions.
+* **Self-Healing Logic:** Implemented `try/except` blocks to auto-reconstruct corrupted or missing local data structures.
+* **Curriculum Focus:** Debugged loop control flows, handled variable scope errors, and designed nested dictionary structures.
