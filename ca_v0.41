@@ -1,0 +1,101 @@
+import json
+
+class AlgorithmLibrary:
+    def __init__(self, filename="algs.json"):
+        self.filename = filename
+        self.data = self.load_library()
+    
+    def load_library(self):
+        try:
+            with open(self.filename, "r") as file:
+                return json.load(file)
+        except FileNotFoundError:
+                with open("default_algs.json", "r") as file:
+                    print("No local save found. Loading default algorithms...")
+                    return json.load(file)
+                    
+                
+    def save_library(self):
+      with open(self.filename, "w") as file:
+        json.dump(self.data, file)
+      print("Library saved permanently")
+      
+    def count_moves(self, alg):
+      move_list = alg.split()
+      return len(move_list)
+
+    def generate_scramble(self, alg):
+        clean_alg = alg.replace("(", "").replace(")", "")
+        moves = clean_alg.split()
+        moves.reverse()
+        scramble = []
+        for move in moves:
+            if "2" in move:
+                scramble.append(move)
+            elif "'" in move:
+                scramble.append(move.replace("'", ""))
+            else:
+                scramble.append(move + "'")
+        return " ".join(scramble)
+    
+class CubeAssistant:
+    def __init__(self):
+        self.library = AlgorithmLibrary()
+    def run(self):
+        while True:
+            print("\n--- New Solve ---")
+            oll_query = input("Enter Command (list/add/scramble/exit) or OLL Case: ").lower()
+    
+            if oll_query == "exit":
+                self.library.save_library()
+                break 
+
+            if oll_query == "list":
+                print("\n--- Current OLL Library ---")
+                for case_name in self.library.data["oll"].keys():
+                    print(f"- {case_name}")
+                for case_name in self.library.data["pll"].keys():
+                    print(f"{case_name}")
+             
+            elif oll_query == "add":
+                drawer = input("Is this OLL or PLL? ").lower()
+                if drawer in ["oll", "pll"]:
+                    new_case = input("Enter the case name: ").lower()
+                    new_alg = input("Enter the algorithm: ")
+                    self.library.data[drawer][new_case] = new_alg
+                    self.library.save_library()
+                    print(f"Successfully added {new_case}!")
+                else:
+                    print("Invalid category.")
+                    
+            elif oll_query == "scramble":
+                drawer = input("Is this for an OLL or PLL case? ").lower()
+                if drawer in ["oll", "pll"]:
+                    target_case = input(f"Enter the {drawer.upper()} case name:")
+                    if target_case in self.library.data[drawer]:
+                        alg = self.library.data[drawer][target_case]
+                        scramble_moves = self.library.generate_scramble(alg)
+                        print(f"\n--- Setup Scramble for {target_case.upper()} ---")
+                        print(f"Algorith: {alg}")
+                        print(f"Scramble: {scramble_moves}\n")
+                    else:
+                        print("Case not found. Check your JSON spelling.")
+            else:
+                print("Invalid category.")
+    
+            
+            if oll_query in self.library.data["oll"]:
+                 alg = self.library.data["oll"][oll_query]
+                 moves = self.library.count_moves(alg)
+                 print(f"OLL Moves: {alg} (Move Count: {moves})")
+            else:
+                print("OLL case not found. Check your JSON spelling.")    
+            pll_query = input("Enter PLL Case: ").lower()
+            if pll_query in self.library.data["pll"]:
+                alg = self.library.data['pll'][pll_query]
+                moves = self.library.count_moves(alg)
+                print(f"PLL Moves: {alg} (Move Count: {moves})")
+            else:
+                print("PLL case not found. Check your JSON spelling.")
+app = CubeAssistant()
+app.run()

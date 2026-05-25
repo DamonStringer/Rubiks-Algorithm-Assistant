@@ -1,0 +1,20 @@
+{
+  "oll": {
+    "sune": "R U R' U R U2 R'",
+    "antisune": "R U2 R' U' R U' R'",
+    "headlights": "R2 D R' U2 R D' R' U2 R'",
+    "chameleon": "r U R' U' r' F R F'",
+    "bowtie": "x (R' U R D') (R' U' R D)",
+    "crossh": "R U2 R' U' R U R' U' R U' R'",
+    "pi": "R U2 R2 U' R2 U' R2 U2 R",
+    "t": "r U R' r'F R F'"
+  },
+  "pll": {
+    "t-perm": "(R U R' U') R' F R2 U' R' U' R U R' F'",
+    "h-perm": "M2 U M2 U2 M2 U M2",
+    "ua-perm": "R U' R U R U R U' R' U' R2",
+    "ub-perm": "R2 U R U R' U' R' U' R' U R'",
+    "z-perm": "M2 U M2 U M' U2 M2 U2 M'",
+    "y-perm": "F R U' R' U' R U R' F' (R U R' U') (R' F R F')"
+  }
+}
