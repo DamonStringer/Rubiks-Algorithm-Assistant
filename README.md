@@ -1,84 +1,66 @@
-🧊 Rubik's Algorithm Assistant
+# 🧊 Rubik's Algorithm Assistant
+
 A command‑line Python tool for managing, searching, and persistently storing OLL/PLL algorithms using a structured JSON backend.
 
-🎯 Purpose: A Living Engineering Log
+## 🎯 Purpose: A Living Engineering Log
 This repository is more than a utility — it’s a living learning log. I’m using this project as a “Shadow Curriculum” to document my growth in Python, software architecture, and systems thinking.
-
 Instead of pretending the first version is perfect, I’m intentionally building in public. Each iteration captures:
-
-the bugs I break
-
-the technical debt I clean
-
-the concepts I learn
-
-the architecture I refine
+- the bugs I break
+- the technical debt I clean
+- the concepts I learn
+- the architecture I refine
 
 This project is both a tool and a record of my engineering progression.
 
-🚀 Current Build — Version 0.1: Beta Architecture
-This version replaces an earlier hot‑fixed prototype. V0.1 is a ground‑up rebuild focused on clarity, structure, and maintainability.
+## 🚀 Current Build — Version 0.41: Seed Data & Mobile Deployment
+This version finalizes the OOP UI loop, secures the repository architecture, and proves the engine's portability by successfully deploying to an Android environment.
 
-Key Features
-Dynamic Data Routing  
-The add function automatically routes user input into the correct nested dictionary (OLL or PLL) based on intent.
+**Key Features**
+- **Seed Data Architecture:** Implemented a fallback template (`default_algs.json`) to securely generate local databases for new users without causing Git merge conflicts.
+- **2-Look PLL Expansion:** The default JSON database now includes the complete 2-Look PLL toolset (Ua, Ub, Z, Y perms) for full last-layer permutation.
+- **Mobile Portability:** Validated the engine's execution on Android via Pydroid 3, overcoming OS scoped-storage and sandboxing limitations.
+- **Hardened Controller Loop:** Patched loop control flaws (misaligned catch-alls and infinite `continue` traps) in the UI router.
 
-Persistent JSON Storage  
-Logic and data are fully separated. Algorithms are saved locally and persist across sessions.
+## 🧠 What I’m Learning (The Curriculum)
+As of V0.41, I’ve applied and practiced:
+- **Repository Architecture:** Implementing `.gitignore` firewalls and separating template data from live user data to prevent public data leaks.
+- **Object-Oriented Design:** Method delegation, state management (`self.data`), and object composition (Model-View-Controller).
+- **Deployment Environments:** Escaping Android's "Scoped Storage" to allow Python engines to read and write files on mobile devices.
+- **Control Flow:** Mastering nested conditionals and short-circuiting loops.
 
-Solve Workflow Simulation  
-A dual‑prompt flow: enter an OLL case → track move count → transition directly into a PLL prompt to mimic real solve practice.
+## 🗺️ Roadmap to V1.0
+- **Phase 1 — Procedural Logic:** Built the core reverse-scrambler and JSON dictionary logic. *(Completed)*
+- **Phase 2 — OOP Refactor:** Abstract the system into objects and secure the repository data state. *(Completed)*
+- **Phase 3 — Graphical User Interface (GUI):** Transition from a text-based terminal loop to a visual canvas with clickable inputs (Tkinter/Kivy).
+- **Phase 4 — Standalone Packaging:** Compile the final GUI application into deployable `.exe` and `.apk` files for desktop and mobile users.
 
-Self‑Healing Error Handling  
-try/except logic reconstructs missing or corrupted JSON structures automatically.
-
-🧠 What I’m Learning (The Curriculum)
-As of V0.1, I’ve applied and practiced:
-
-Debugging Logic Errors  
-Understanding indentation, loop flow, and order‑of‑operations inside while loops.
-
-Variable Scope & Alignment  
-Eliminating NameError issues by ensuring consistent variable naming across logic branches.
-
-Data Structure Design  
-Transitioning from flat lists to nested dictionaries and learning how to access and manipulate them cleanly.
-
-🗺️ Roadmap to V1.0
-Phase 2 — Reverse Scrambler
-Generate setup moves automatically using string manipulation and algorithm inversion.
-
-Phase 3 — OOP Refactor
-Abstract the entire system into classes for cleaner architecture and scalability.
-
-Phase 4 — Version 1.0 Release
-A polished, stable, fully‑featured CLI with robust error handling and clean documentation.
+---
 
 ## 📜 Version History & Changelog
 
-### 🚀 [v0.3 - The OOP Foundation](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/versions/v0.3/CA_V0.3_readme.txt)
+### 📱 v0.41 - Seed Data & Mobile Deployment
+*Secured the repository architecture and successfully deployed the engine to a mobile environment.*
+- **State Separation:** Built a `try/except` initialization sequence using `default_algs.json` to prevent personal user databases from leaking into public version control.
+- **Database Expansion:** Completed the "2-Look PLL" algorithm dictionary by adding the Ua, Ub, Z, and Y permutations.
+- **Controller Hardening:** Patched UI router logic, successfully nesting search conditionals and removing infinite loop traps.
+- **Curriculum Focus:** Mastered repository architecture (`.gitignore`), Git conflict prevention, and Android OS Scoped Storage constraints.
+
+### 🚀 v0.3 - The OOP Foundation
 *Architectural shift from procedural scripting to scalable, object-oriented design.*
+- **OOP Refactor:** Encapsulated library management, move-counting, and file I/O into the new `AlgorithmLibrary` class.
+- **Separation of Concerns:** Isolated data storage states from operational logic to reduce global state bugs.
+- **Method Encapsulation:** Integrated the reverse scrambler into a reusable class method (`generate_scramble()`).
+- **Curriculum Focus:** Learned state management, class architecture, and modular engine design.
 
-* **OOP Refactor:** Encapsulated library management, move-counting, and file I/O into the new `AlgorithmLibrary` class.
-* **Separation of Concerns:** Isolated data storage states from operational logic to reduce global state bugs.
-* **Method Encapsulation:** Integrated the reverse scrambler into a reusable class method (`generate_scramble()`).
-* **Curriculum Focus:** Learned state management, class architecture, and modular engine design.
-
----
-
-### 🧩 [v0.2 - Reverse Scrambler Engine](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/versions/v0.2/v0.2README.MD)
+### 🧩 v0.2 - Reverse Scrambler Engine
 *Introduced the project's first computational subsystem to generate setup moves.*
+- **Reverse Scrambler:** Added logic to clean algorithm strings, split move sequences, and invert faces/primes (preserving double moves) for targeted practice.
+- **New Command:** Implemented the `scramble` gate into the main workflow loop.
+- **Curriculum Focus:** Mastered advanced string manipulation (`.replace()`, `.split()`), list inversion, and translating physical cube logic into programmatic conditionals.
 
-* **Reverse Scrambler:** Added logic to clean algorithm strings, split move sequences, and invert faces/primes (preserving double moves) for targeted practice.
-* **New Command:** Implemented the `scramble` gate into the main workflow loop.
-* **Curriculum Focus:** Mastered advanced string manipulation (`.replace()`, `.split()`), list inversion, and translating physical cube logic into programmatic conditionals.
-
----
-
-### 📦 [v0.1 - Beta Architecture](https://github.com/DamonStringer/Rubiks-Algorithm-Assistant/blob/main/README.md)
+### 📦 v0.1 - Beta Architecture
 *The ground-up rebuild focusing on structural clarity and persistent storage.*
-
-* **Dynamic Data Routing:** Automatically sorts input into nested OLL/PLL JSON dictionaries.
-* **Solve Workflow:** Created a dual-prompt flow mimicking real-world OLL-to-PLL transitions.
-* **Self-Healing Logic:** Implemented `try/except` blocks to auto-reconstruct corrupted or missing local data structures.
-* **Curriculum Focus:** Debugged loop control flows, handled variable scope errors, and designed nested dictionary structures.
+- **Dynamic Data Routing:** Automatically sorts input into nested OLL/PLL JSON dictionaries.
+- **Solve Workflow:** Created a dual-prompt flow mimicking real-world OLL-to-PLL transitions.
+- **Self-Healing Logic:** Implemented `try/except` blocks to auto-reconstruct corrupted or missing local data structures.
+- **Curriculum Focus:** Debugged loop control flows, handled variable scope errors, and designed nested dictionary structures.
